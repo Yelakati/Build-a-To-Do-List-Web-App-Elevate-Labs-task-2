@@ -1,0 +1,186 @@
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(145deg, #21c351, #c91dc6);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s ease-in-out;
+  }
+  
+  .todo-container {
+    background: rgba(184, 235, 151, 0.95);
+    padding: 30px 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1s ease;
+  }
+  .todo-container:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #task-input {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+  
+  #task-input:focus {
+    outline: none;
+    border-color: #ff69b4;
+  }
+  
+  #add-btn {
+    padding: 10px 15px;
+    background: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #add-btn:hover {
+    background: #ff1493;
+  }
+  
+  #task-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background: #fff0f5;
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.4s ease;
+  }
+  
+  li:hover {
+    background: #ffe4ec;
+  }
+  
+  li.completed {
+    text-decoration: line-through;
+    color: gray;
+    opacity: 0.7;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.2s ease;
+  }
+  
+  .actions button:hover {
+    transform: scale(1.2);
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .filter {
+    background: #ddd;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .filter.active {
+    background: #ff69b4;
+    color: white;
+  }
+   /* Suggestions */
+   .suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    max-height: 150px;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .suggestions-list li {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .suggestions-list li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .suggestions-list li:last-child {
+    border-bottom: none;
+  }
+  
+  
+  /* Media Queries for responsiveness */
+  @media (max-width: 500px) {
+    .input-group {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    #add-btn {
+      width: 100%;
+    }
+  
+    .filters {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+  
